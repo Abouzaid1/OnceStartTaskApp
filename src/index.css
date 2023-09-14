@@ -1,0 +1,133 @@
+/* src/styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Your custom styles */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Ui verse */
+/* Multiple Toggle Switch by Abu Shafiyya */
+/* h1, h2, h3, h4, h5, h6,p,span{
+  color: rgb(255, 255, 255) !important;
+}
+*{
+  background-color: rgb(0, 0, 0) !important;
+  border-color: rgb(255, 255, 255) !important;
+} */
+fieldset {
+  border: 0;
+  color: rgb(0, 50, 92);
+}
+
+/* Hide default radio */
+.radio input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Customizing label */
+.radio label {
+  position: relative;
+  padding: 10px 20px 10px 25px;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #cbcaca;
+  margin: 0px 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.radio label, .radio label::before {
+  -webkit-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+.radio label::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #fdf7d2;
+}
+
+.radio input[type="radio"] + label::before {
+  border-radius: 1em;
+}
+
+
+/* Checked toggle */
+.radio input[type="radio"]:checked + label {
+  color: #fff;
+
+  z-index: 1;
+}
+
+.radio input[type="radio"]:checked + label {
+  padding: 20px 20px 20px 20px;
+}
+
+.radio input[type="radio"]:checked + label::before {
+  top: 4px;
+  width: 100%;
+  height: 2em;
+  z-index: -1;
+}
+
+
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  position: relative;
+  cursor: pointer;
+  font-size: 17px;
+  width: 2.5em;
+  height: 2.5em;
+  user-select: none;
+  border: 1px solid white;
+  border-radius: 8px;
+  display: block;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  /* top: 25%;
+  left: 25%; */
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transition: .1s ease;
+  border-radius: 3px;
+}
+
+.container input:checked ~ .checkmark:after {
+  transform: scale(1);
+}
